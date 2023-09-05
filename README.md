@@ -1,4 +1,4 @@
-# Basic vue3 app with typescript support
+# Adminscrapper Web app (Vue 3 + Vite + TypeScript)
 
 ## Recommended IDE Setup
 
