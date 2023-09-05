@@ -1,6 +1,4 @@
-# adminscrapper-app
-
-This template should help get you started developing with Vue 3 in Vite.
+# Basic vue3 app with typescript support
 
 ## Recommended IDE Setup
 
