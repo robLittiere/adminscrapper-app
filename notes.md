@@ -2,8 +2,8 @@
 
 ## Figma design
 
-- Rechercher un design d'application de monitoring web (ou backoffice admin)
-- Réfléchir aux composants nécessaires à créer, comment organiser le projet
+- ~~Rechercher un design d'application de monitoring web (ou backoffice admin)~~
+- ~~Réfléchir aux composants nécessaires à créer, comment organiser le projet~~
 - Commencer à créer les composants Vue en typescript quitte à faire des recherches
 
 ## Adminscrapper - Script
