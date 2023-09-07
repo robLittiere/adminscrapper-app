@@ -51,6 +51,8 @@ export default {};
   list-style: none;
   align-items: center;
   padding-right: 2em;
+  font-variation-settings: "wght" 700;
+  font-size: 16px;
 }
 
 .menu_item {
@@ -62,9 +64,9 @@ export default {};
 }
 
 .logo_container {
-  padding: 8px;
-  max-height: 150px;
-  max-width: 150px;
+  padding: 4px;
+  max-height: var(--sidebar-width);
+  max-width: var(--sidebar-width);
   padding-right: 1em;
   padding-left: 6px;
   border-right: 1px solid lightgray;
@@ -78,7 +80,7 @@ export default {};
 
 .app_name {
   padding-left: 1em;
-  font-weight: bold;
-  font-size: 1.5em;
+  font-variation-settings: "wght" 800;
+  font-size: 2em;
 }
 </style>
