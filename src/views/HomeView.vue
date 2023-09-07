@@ -5,5 +5,6 @@ import HeaderAdmin from "@/components/HeaderAdmin.vue";
 
 <template>
   <HeaderAdmin />
+
   <main></main>
 </template>
