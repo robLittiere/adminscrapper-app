@@ -4,12 +4,15 @@
       <div class="logo_container">
         <img src="../assets/saro/saro_128.png" alt="Logo SARO" />
       </div>
-      <div class="app_name">SARO</div>
     </div>
     <div class="right_side">
+      <div class="app_name">SARO</div>
       <ul class="menu">
         <li>
-          <router-link class="menu_item" to="/">Administration</router-link>
+          <router-link class="menu_item" to="/"
+            ><div>Administration</div>
+            <span></span
+          ></router-link>
         </li>
         <li>
           <router-link class="menu_item" to="/dashboard"
@@ -29,16 +32,18 @@ export default {};
 <style scoped>
 .header_container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  min-height: 80px;
+  min-height: var(--header-height);
   background-color: #fff;
-  border-bottom: 1px solid lightgray;
 }
 
 .right_side {
+  flex: 1;
   display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
   align-items: center;
+  border-left: 2px solid var(--color-border-light);
 }
 
 .left_side {
@@ -47,29 +52,48 @@ export default {};
 }
 
 .menu {
+  height: 100%;
   display: flex;
   list-style: none;
   align-items: center;
+  justify-content: center;
   padding-right: 2em;
   font-variation-settings: "wght" 700;
   font-size: 16px;
 }
 
-.menu_item {
-  padding: 2.3em 1.2em 2.3em 1.2em;
-  color: var(--color-header-text);
+li {
+  height: 100%;
 }
+
+.menu_item {
+  padding: 0 1.2em;
+  height: 100%;
+  color: var(--color-header-text);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu_item > span {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  background: black;
+  width: 0;
+}
+
 .menu_item:hover {
   color: var(--color-header-hover);
 }
 
 .logo_container {
   padding: 4px;
-  max-height: var(--sidebar-width);
-  max-width: var(--sidebar-width);
+  max-height: var(--header-height);
+  min-width: var(--sidebar-width);
   padding-right: 1em;
   padding-left: 6px;
-  border-right: 1px solid lightgray;
 }
 
 .logo_container > img {
