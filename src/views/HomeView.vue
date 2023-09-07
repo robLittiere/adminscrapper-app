@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Home from "@/components/Home.vue";
-import Header from "@/components/Header.vue";
+import HeaderAdmin from "@/components/HeaderAdmin.vue";
 </script>
 
 <template>
-  <Header />
+  <HeaderAdmin />
   <main></main>
 </template>
