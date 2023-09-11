@@ -1,1 +1,21 @@
 @import "./base.css";
+a,
+a:visited {
+  color: var(--accent1);
+}
+
+a:hover {
+  color: var(--accent2);
+}
+
+.bg-positive {
+  background-color: var(--positive);
+}
+
+.bg-warning {
+  background-color: var(--warning);
+}
+
+.bg-ping {
+  background-color: var(--accent3);
+}

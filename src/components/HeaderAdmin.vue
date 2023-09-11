@@ -68,11 +68,12 @@ li {
 
 .menu_item {
   padding: 0 1.2em;
+  padding-top: 2px;
   height: 100%;
-  color: var(--color-header-text);
   display: flex;
   align-items: center;
   position: relative;
+  border-bottom: 2px solid transparent;
 }
 
 .menu_item > span {
@@ -85,7 +86,7 @@ li {
 }
 
 .menu_item:hover {
-  color: var(--color-header-hover);
+  border-bottom: 2px solid var(--accent1);
 }
 
 .logo_container {

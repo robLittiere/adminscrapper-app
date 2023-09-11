@@ -26,6 +26,11 @@
 
   --sidebar-width: 150px;
   --header-height: 88px;
+  --accent1: rgb(57, 43, 184);
+  --accent2: rgb(29, 18, 122);
+  --accent3: #cef4e9;
+  --positive: #cde2ff;
+  --warning: #ffe5d8;
 }
 
 /* semantic color variables for this project */
