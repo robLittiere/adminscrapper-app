@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="activity_container">
+  <div class="activity_container widget">
     <div class="activity_title">{{ title }}</div>
     <div class="activity_content">
       <div :class="iconClass">
@@ -46,9 +46,7 @@ export default {
 .activity_container {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  min-height: 20vh;
-  margin: 8px;
+  min-height: 150px;
   padding: 1.5em;
 }
 
@@ -61,8 +59,10 @@ export default {
   height: 100%;
   display: flex;
   align-items: flex-end;
-  gap: 16px;
-  margin-bottom: 2em;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 0.8em;
+  margin-left: 0.5em;
 }
 
 .activity_data {

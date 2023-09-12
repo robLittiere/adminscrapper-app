@@ -106,6 +106,8 @@ li {
 .app_name {
   padding-left: 1em;
   font-variation-settings: "wght" 800;
-  font-size: 2em;
+  font-size: 2.5em;
+  color: var(--accent2);
+  letter-spacing: 4px;
 }
 </style>
