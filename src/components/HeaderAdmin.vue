@@ -15,12 +15,10 @@
           ></router-link>
         </li>
         <li>
-          <router-link class="menu_item" to="/dashboard"
-            >VM Disponibles</router-link
-          >
+          <router-link class="menu_item" to="/">VM Disponibles</router-link>
         </li>
         <li>
-          <router-link class="menu_item" to="/about">Liens utiles</router-link>
+          <router-link class="menu_item" to="/">Liens utiles</router-link>
         </li>
       </ul>
     </div>
