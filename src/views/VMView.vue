@@ -9,7 +9,7 @@ import { fetchDevices } from "@/helpers/apiHelper";
 import { ref, onMounted, computed } from "vue";
 import { type VmsType, type VmType } from "@/types";
 import { useDeviceStore } from "@/stores/device";
-import { fetchErrorDevices } from "@/helpers/apiHelper";
+import { fetchErrorDevices, fetchSuccessDevices } from "@/helpers/apiHelper";
 import VmTable from "@/components/VmTable.vue";
 let deviceStore = useDeviceStore();
 
@@ -33,6 +33,18 @@ onMounted(async () => {
     } as VmType;
   });
   vms.value.errors = errobj;
+
+  let success: string[] = await fetchSuccessDevices();
+  let suobj: VmType[] = success.map((success) => {
+    let split = success.split("-");
+    return {
+      name: split[0],
+      url: split[1],
+      date: split[2],
+      status: "ONLINE",
+    } as VmType;
+  });
+  vms.value.success = suobj;
 });
 </script>
 

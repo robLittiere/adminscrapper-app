@@ -11,3 +11,9 @@ export const fetchErrorDevices = async () => {
   let data = await axios.get(url);
   return data.data.data;
 };
+
+export const fetchSuccessDevices = async () => {
+  const url = "http://localhost:8080/api/v1/devices/success";
+  let data = await axios.get(url);
+  return data.data.data;
+};

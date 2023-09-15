@@ -29,6 +29,9 @@ const fmvms = computed(() => {
         <tr v-for="vm in props.vms.errors" :key="vm.url">
           <VMrow :vm="vm" />
         </tr>
+        <tr v-for="vm in props.vms.success" :key="vm.url">
+          <VMrow :vm="vm" />
+        </tr>
       </tbody>
     </table>
   </div>

@@ -7,23 +7,31 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Probe | home",
       component: HomeView,
     },
     {
       path: "/vm",
-      name: "vm",
+      name: "Probe | vm",
       component: () => import("../views/VMView.vue"),
     },
     {
       path: "/about",
-      name: "about",
+      name: "Probe | about",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("router.beforeEach");
+  // Change title
+  console.log(to);
+  document.title = to.name as string;
+  next();
 });
 
 export default router;

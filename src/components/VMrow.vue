@@ -29,10 +29,8 @@ const statusClass = computed(() => {
       {{ props.vm.url }}
     </div>
   </td>
-  <td>
-    <div class="vm-status">
-      <span>{{ vm.status }}</span>
-    </div>
+  <td class="vm-status">
+    <span :class="statusClass">{{ vm.status }}</span>
   </td>
   <td>
     <div class="vm-date">{{ vm.date }}</div>
@@ -61,5 +59,12 @@ td {
 .vm-name {
   font-weight: 700;
   color: var(--accent2);
+}
+.vm-status > span {
+  font-weight: 500;
+  padding-right: 3em;
+  padding-left: 3em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>
