@@ -17,6 +17,30 @@ const statusClass = computed(() => {
   };
 });
 
+const formatLastConnection = computed(() => {
+  const currentDate = new Date();
+  const timestamp = new Date(props.device.datetime).getTime();
+  const currentTimestamp = currentDate.getTime();
+  const difference = currentTimestamp - timestamp;
+
+  const seconds = Math.floor(difference / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  if (days > 0) {
+    return `${days} j ${hours % 24} h ${minutes % 60} min${
+      minutes % 60 === 1 ? "" : "s"
+    }`;
+  } else if (hours > 0) {
+    return `${hours} h ${minutes % 60} min${minutes % 60 === 1 ? "" : "s"}`;
+  } else if (minutes > 0) {
+    return `${minutes} min${minutes === 1 ? "" : "s"}`;
+  } else {
+    return `${seconds} seconde${seconds === 1 ? "" : "s"}`;
+  }
+});
+
 const getStatus = computed(() => {
   return props.device.connected == "true" ? "ONLINE" : "OFFLINE";
 });
@@ -32,7 +56,7 @@ const getStatus = computed(() => {
     <span :class="statusClass">{{ getStatus }}</span>
   </td>
   <td>{{ device.datetime }}</td>
-  <td>15j12h08m</td>
+  <td>{{ formatLastConnection }}</td>
 </template>
 <style scoped>
 td > img {
@@ -53,7 +77,8 @@ td {
 }
 
 .status {
-  padding: 0.5em;
+  font-weight: 500;
+  padding: 5px;
   padding-left: 3em;
   padding-right: 3em;
 }
