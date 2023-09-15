@@ -31,6 +31,8 @@
   --accent3: #cef4e9;
   --positive: #cde2ff;
   --warning: #ffe5d8;
+  --warning-bg: #ff8f93;
+  --warning-text: #a23539;
 }
 
 /* semantic color variables for this project */

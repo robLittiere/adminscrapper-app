@@ -9,6 +9,14 @@ const props = defineProps({
   },
 });
 
+const statusClass = computed(() => {
+  return {
+    status: true,
+    "bg-positive color-accent": props.device.connected == "true",
+    "bg-warning-accent color-warning": props.device.connected == "false",
+  };
+});
+
 const getStatus = computed(() => {
   return props.device.connected == "true" ? "ONLINE" : "OFFLINE";
 });
@@ -20,7 +28,9 @@ const getStatus = computed(() => {
   <td class="hostname">{{ device.hostname }}</td>
   <td>{{ device.mac_address }}</td>
   <td>{{ device.ip_address }}</td>
-  <td>{{ getStatus }}</td>
+  <td>
+    <span :class="statusClass">{{ getStatus }}</span>
+  </td>
   <td>{{ device.datetime }}</td>
   <td>15j12h08m</td>
 </template>
@@ -40,5 +50,11 @@ td {
   padding: 2em;
   text-align: center;
   color: black;
+}
+
+.status {
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 </style>

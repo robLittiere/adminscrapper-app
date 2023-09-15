@@ -16,8 +16,20 @@ a:hover {
   background-color: var(--warning);
 }
 
+.bg-warning-accent {
+  background-color: var(--warning-bg);
+}
+
 .bg-ping {
   background-color: var(--accent3);
+}
+
+.color-warning {
+  color: var(--warning-text);
+}
+
+.color-accent {
+  color: var(--accent1);
 }
 
 .widget {
