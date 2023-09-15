@@ -6,14 +6,33 @@ import ActivityCard from "@/components/ActivityCard.vue";
 import DeviceTable from "@/components/DeviceTable.vue";
 import ActivityList from "@/components/ActivityList.vue";
 import { fetchDevices } from "@/helpers/apiHelper";
-import { ref, onMounted, onBeforeMount } from "vue";
-import { type Device } from "@/types";
+import { ref, onMounted, computed } from "vue";
+import { type VmsType, type VmType } from "@/types";
 import { useDeviceStore } from "@/stores/device";
-
+import { fetchErrorDevices } from "@/helpers/apiHelper";
+import VmTable from "@/components/VmTable.vue";
 let deviceStore = useDeviceStore();
+
+const vms = ref<VmsType>({
+  errors: [],
+  success: [],
+});
 
 onMounted(async () => {
   deviceStore.fillDevices();
+
+  console.log("Im getting success and error urls....");
+  let errors: string[] = await fetchErrorDevices();
+  let errobj: VmType[] = errors.map((error) => {
+    let split = error.split("-");
+    return {
+      name: split[0],
+      url: split[1],
+      date: split[2],
+      status: "OFFLINE",
+    } as VmType;
+  });
+  vms.value.errors = errobj;
 });
 </script>
 
@@ -23,9 +42,7 @@ onMounted(async () => {
     <Sidebar />
     <main class="content">
       <ActivityList />
-      <div class="ativity_table">
-        <DeviceTable />
-      </div>
+      <div class="ativity_table"><VmTable :vms="vms" /></div>
     </main>
   </div>
 </template>

@@ -9,4 +9,16 @@ interface Device {
   time: string;
 }
 
-export { Device };
+interface VmsType {
+  errors: VmType[];
+  success: VmType[];
+}
+
+interface VmType {
+  name: string;
+  url: string;
+  status: string;
+  date: string;
+}
+
+export { Device, VmsType, VmType };

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="header_container">
     <div class="left_side">
       <div class="logo_container">
@@ -15,7 +15,7 @@
           ></router-link>
         </li>
         <li>
-          <router-link class="menu_item" to="/">VM Disponibles</router-link>
+          <router-link class="menu_item" to="/vm">VM Disponibles</router-link>
         </li>
         <li>
           <router-link class="menu_item" to="/">Liens utiles</router-link>
