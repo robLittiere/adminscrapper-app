@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import DeviceRow from "./DeviceRow.vue";
+import { useDeviceStore } from "@/stores/device";
+import { storeToRefs } from "pinia";
+import { computed } from "vue";
+const { devices } = storeToRefs(useDeviceStore());
+
+const reverseDevices = computed(() => {
+  return devices.value.reverse();
+});
+</script>
 <template>
   <div class="table-container widget">
     <table class="data-table">
@@ -13,34 +24,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <DeviceRow />
-        </tr>
-        <tr>
-          <DeviceRow />
-        </tr>
-        <tr>
-          <DeviceRow />
-        </tr>
-        <tr>
-          <DeviceRow />
+        <tr v-for="device in reverseDevices">
+          <DeviceRow :device="device" :key="device.mac_address" />
         </tr>
       </tbody>
     </table>
   </div>
 </template>
-<script lang="ts">
-import DeviceRow from "./DeviceRow.vue";
-
-export default {
-  components: {
-    DeviceRow,
-  },
-  data() {
-    return {};
-  },
-};
-</script>
 <style>
 .table-container {
   display: flex;

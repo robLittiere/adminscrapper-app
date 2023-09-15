@@ -5,6 +5,16 @@ import Sidebar from "@/components/Sidebar.vue";
 import ActivityCard from "@/components/ActivityCard.vue";
 import DeviceTable from "@/components/DeviceTable.vue";
 import ActivityList from "@/components/ActivityList.vue";
+import { fetchDevices } from "@/helpers/apiHelper";
+import { ref, onMounted, onBeforeMount } from "vue";
+import { type Device } from "@/types";
+import { useDeviceStore } from "@/stores/device";
+
+let deviceStore = useDeviceStore();
+
+onMounted(async () => {
+  deviceStore.fillDevices();
+});
 </script>
 
 <template>
@@ -19,6 +29,7 @@ import ActivityList from "@/components/ActivityList.vue";
     </main>
   </div>
 </template>
+<script lang="ts"></script>
 
 <style>
 .view_container {

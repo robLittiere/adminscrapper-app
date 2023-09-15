@@ -5,7 +5,7 @@
       <div :class="iconClass">
         <img :src="getImageUrl()" alt="Statut d'activité" />
       </div>
-      <div class="activity_data">{{ content }}</div>
+      <div class="activity_data">{{ content.toString() }}</div>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
   props: {
     title: String,
-    content: String,
+    content: Number,
     icon_filename: String,
     color: String,
   },
@@ -36,7 +36,6 @@ export default {
         `../assets/icons/${this.icon_filename}`,
         import.meta.url
       );
-      console.log(url);
       return url;
     },
   },
